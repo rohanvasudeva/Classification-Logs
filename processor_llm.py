@@ -15,15 +15,14 @@ def classify_with_llm(log_msg):
     variant would be "Session timed out for user 9251"
     """
     prompt = f'''Classify the log message into one of these categories: 
-    (1) Workflow Error, (2) Deprecation Warning.
+    (1) Workflow Error,(2) Deprecation Warning.
     If you can't figure out a category, use "Unclassified".
     Put the category inside <category> </category> tags. 
     Log message: {log_msg}'''
 
     chat_completion = groq.chat.completions.create(
         messages=[{"role": "user", "content": prompt}],
-        # model="llama-3.3-70b-versatile",
-        model="deepseek-r1-distill-llama-70b",
+        model="llama-3.3-70b-versatile",
         temperature=0.5
     )
 

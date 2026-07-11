@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Log Classification</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+<div class="background"></div>
+<div class="card">
+    <h1>AI Log Classification</h1>
+    <p>
+        Upload your CSV containing application logs.
+        The system classifies each log using
+        <b>Regex + BERT + LLM</b>.
+    </p>
+    <label class="upload-box">
+        <input
+            type="file"
+            id="csvFile"
+            accept=".csv">
+        <div>
+            <span class="icon">📄</span>
+            <h3>Select CSV File</h3>
+            <small id="filename">
+                No file selected
+            </small>
+        </div>
+    </label>
+    <button id="uploadBtn">
+        Analyze Logs
+    </button>
+    <div id="loader"></div>
+    <p id="status"></p>
+</div>
+<script src="/static/script.js"></script>
+</body>
+</html>
